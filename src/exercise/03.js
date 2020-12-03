@@ -1,7 +1,11 @@
 // Lifting state
 // http://localhost:3000/isolated/exercise/03.js
 
+<<<<<<< HEAD
 import React, {useState} from 'react'
+=======
+import * as React from 'react'
+>>>>>>> 0ad717ff130e9689e1271026a42c592dc90e7b9b
 
 function Name() {
   const [name, setName] = React.useState('')

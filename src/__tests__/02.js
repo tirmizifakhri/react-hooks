@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import {render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from '../final/02'
@@ -17,9 +17,9 @@ test('App works', () => {
   // variation here.
   const isSerialized = lsName === '"bob"'
   if (isSerialized) {
-    screen.getByText(/hello.*bob/i)
+    expect(screen.getByText(/hello.*bob/i)).toBeInTheDocument()
   } else if (lsName === 'bob') {
-    screen.getByText(/hello.*bob/i)
+    expect(screen.getByText(/hello.*bob/i)).toBeInTheDocument()
   } else {
     throw new Error(
       `🚨 localStorage is not getting updated with the text that's typed. Be sure to call window.localStorage.setItem('name', name) in a useEffect callback that runs whenever the name changes.`,
